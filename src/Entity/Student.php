@@ -21,7 +21,7 @@ class Student
 
     /**
      * @ORM\Column(type="string", length=25)
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message="Le prénom  doit être rempli.")
      * @Assert\Length(
      *     max=25,
      *     maxMessage = "Le prénom  ne doit pas dépasser {{ limit }} charactères."
@@ -31,7 +31,7 @@ class Student
 
     /**
      * @ORM\Column(type="string", length=25)
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message="Le nom  doit être rempli.")
      * @Assert\Length(
      *     max=25,
      *     maxMessage = "Le nom  ne doit pas dépasser {{ limit }} charactères."
@@ -41,13 +41,10 @@ class Student
 
     /**
      * @ORM\Column(type="string", length=10)
-     * @Assert\NotBlank
-     * @Assert\Length(
-     *     max=10,
-     *     maxMessage = "Le numéro étudiant  ne doit pas dépasser {{ limit }} charactères."
-     * )
+     * @Assert\NotBlank(message="Le numéro étudiant  doit être rempli.")
      * @Assert\Regex(
      *     "/^\d{10}$/",
+     *     message="Le numéro étudiant doit contenir 10 chiffres."
      * )
      */
     private $numEtud;

@@ -6,7 +6,7 @@
 <div class="students">
     <h1>Liste des étudiants</h1>
 
-    <a href="{{ path('students_add') }}">Ajouter un étudiant</a>
+    <a href="{{ path('students_add') }}" class="btn btn-primary">Ajouter un étudiant</a>
 
     {% if students is empty %}
         <p>La liste des élèves est vide.</p>
@@ -23,12 +23,12 @@
                 <td>{{ student.lastName }}</td>
                 <td>{{ student.numEtud }}</td>
                 <td>
-                    <a href="{{ path('students_show', { 'id': student.id }) }}">Voir le détail</a>
-                    <a href="{{ path('students_edit', { 'id': student.id }) }}">Modifier</a>
+                    <a href="{{ path('students_show', { 'id': student.id }) }}" class="btn btn-primary">Voir le détail</a>
+                    <a href="{{ path('students_edit', { 'id': student.id }) }}" class="btn btn-primary">Modifier</a>
                     <form action="{{ path('students_delete', { 'id': student.id }) }}" method="post" style="display: inline-block">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ student.id) }}">
-                        <button type="submit">Supprimer</button>
+                        <button type="submit" class="btn btn-danger">Supprimer</button>
                     </form>
                 </td>
             </tr>
