@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un étudiant{% endblock %}
+
+{% block body %}
+    {{ include('student/_form.html.twig', { 'label': 'Créer' }) }}
+{% endblock %}

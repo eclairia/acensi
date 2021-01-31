@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des étudiants{% endblock %}
+
+{% block body %}
+<div class="students">
+    <h1>Liste des étudiants</h1>
+
+    <a href="{{ path('students_add') }}">Ajouter un étudiant</a>
+
+    {% if students is empty %}
+        <p>La liste des élèves est vide.</p>
+    {% endif %}
+    {% for student in students %}
+        <table>
+            <tr>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Numéro étudiant</th>
+            </tr>
+            <tr>
+                <td>{{ student.firstName }}</td>
+                <td>{{ student.lastName }}</td>
+                <td>{{ student.numEtud }}</td>
+                <td>
+                    <a href="{{ path('students_show', { 'id': student.id }) }}">Voir le détail</a>
+                    <a href="{{ path('students_edit', { 'id': student.id }) }}">Modifier</a>
+                    <form action="{{ path('students_delete', { 'id': student.id }) }}" method="post" style="display: inline-block">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ student.id) }}">
+                        <button type="submit">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    {% endfor %}
+</div>
+{% endblock %}

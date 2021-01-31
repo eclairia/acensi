@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Etudiant {{ student.firstName }} {{ student.lastName }}{% endblock %}
+
+{% block body %}
+    <h1>Détail de l'étudiant {{ student.firstName }} {{ student.lastName }}</h1>
+    <ul>
+        <li>Prénom: {{ student.firstName }}</li>
+        <li>Nom: {{ student.lastName }}</li>
+        <li>Numéro de l'étudiant: {{ student.numEtud }}</li>
+    </ul>
+
+    <a href="{{ path('students') }}">Revenir à la liste des étudiants</a>
+{% endblock %}

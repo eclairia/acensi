@@ -1,0 +1,17 @@
+{{ form_start(form) }}
+
+{{ form_errors(form.firstName) }}
+{{ form_label(form.firstName, 'Prénom') }}
+{{ form_widget(form.firstName) }}
+
+{{ form_errors(form.lastName) }}
+{{ form_label(form.lastName, 'Nom') }}
+{{ form_widget(form.lastName) }}
+
+
+{{ form_errors(form.numEtud) }}
+{{ form_label(form.numEtud, 'Numéro étudiant') }}
+{{ form_widget(form.numEtud) }}
+<button type="submit">{{ label|default('Créer') }}</button>
+
+{{ form_end(form) }}
