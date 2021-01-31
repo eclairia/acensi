@@ -7,10 +7,17 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
+use App\Controller\DepartmentController;
 
 /**
  * @ORM\Entity(repositoryClass=DepartmentRepository::class)
- * @ApiResource()
+ * @ApiResource(itemOperations={
+ *     "get_department_registered_students"={
+ *          "method"="GET",
+ *          "path"="/departments/{id}/students",
+ *          "controller"=DepartmentController::class,
+ *     }
+ * })
  */
 class Department
 {
