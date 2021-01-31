@@ -12,4 +12,4 @@ php bin/console server:start
 ```
 puis accéder au site avec l'url localhost:8000/students.
 
-La documentation se trouve à l'url localhost:8000/api/docs.
+La documentation se trouve à l'url localhost:8000/docs.
