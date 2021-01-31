@@ -4,4 +4,5 @@
 
 {% block body %}
     {{ include('student/_form.html.twig', { 'label': 'Modifier' }) }}
+    <a href="{{ path('students') }}" class="btn btn-primary">Revenir à la liste des étudiants</a>
 {% endblock %}

@@ -17,11 +17,13 @@
                 <th>Prénom</th>
                 <th>Nom</th>
                 <th>Numéro étudiant</th>
+                <th>Département</th>
             </tr>
             <tr>
                 <td>{{ student.firstName }}</td>
                 <td>{{ student.lastName }}</td>
                 <td>{{ student.numEtud }}</td>
+                <td>{{ student.department }}</td>
                 <td>
                     <a href="{{ path('students_show', { 'id': student.id }) }}" class="btn btn-primary">Voir le détail</a>
                     <a href="{{ path('students_edit', { 'id': student.id }) }}" class="btn btn-primary">Modifier</a>

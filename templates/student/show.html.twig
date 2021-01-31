@@ -8,7 +8,9 @@
         <li>Prénom: {{ student.firstName }}</li>
         <li>Nom: {{ student.lastName }}</li>
         <li>Numéro de l'étudiant: {{ student.numEtud }}</li>
+        <li>Département de l'étudiant: {{ student.department }}</li>
+        <li>Capacité du département: {{ student.department.capacity }}</li>
     </ul>
 
-    <a href="{{ path('students') }}">Revenir à la liste des étudiants</a>
+    <a href="{{ path('students') }}" class="btn btn-primary">Revenir à la liste des étudiants</a>
 {% endblock %}

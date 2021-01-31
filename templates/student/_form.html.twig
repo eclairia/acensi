@@ -9,6 +9,10 @@
 
 {{ form_label(form.numEtud, 'Numéro étudiant') }}
 {{ form_widget(form.numEtud) }}
+
+{{ form_label(form.department, 'Département') }}
+{{ form_widget(form.department) }}
+
 <button type="submit" class="btn btn-primary">{{ label|default('Créer') }}</button>
 
 {{ form_end(form) }}

@@ -2,7 +2,10 @@
 
 namespace App\Form;
 
+use App\Entity\Department;
 use App\Entity\Student;
+use App\Repository\DepartmentRepository;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -21,6 +24,9 @@ class StudentType extends AbstractType
             ])
             ->add('numEtud', TextType::class, [
                 'empty_data' => ''
+            ])
+            ->add('department', EntityType::class, [
+                'class' => Department::class
             ])
         ;
     }
